@@ -53,7 +53,7 @@ const client = createClient({
 </script>
 ```
 
-After, How to use it below.
+After, How to use `get` it below.
 
 ```javascript
 client
@@ -75,10 +75,74 @@ client
   .catch((err) => console.log(err));
 ```
 
-If you are using TypeScript, specify the response type.
+And, Api corresponding to each content are also available. example.
+
+```javascript
+// Get list API data
+client
+  .getList({
+    endpoint: 'endpoint',
+  })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+
+// Get list API detail data
+client
+  .getListDetail({
+    endpoint: 'endpoint',
+    contentId: 'contentId',
+  })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+
+// Get object API data
+client
+  .getObject({
+    endpoint: 'endpoint',
+  })
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+```
+
+If you are using TypeScript, specify `getList`, `getListDetail`, `getObject`.  example.
 
 ```typescript
-client.get<ResponseType>({endpoint: 'endpoint'})
+type Content = {
+  text: string,
+}
+
+/**
+ * type ResponseType = {
+ *  contents: Content; // This is Content type
+ *  totalCount: number;
+ *  limit?: number;
+ *  offset: number;
+ * } 
+ */
+client.getList<Content>({ //other })
+
+/**
+ * type ResponseType = {
+ *  id: string;
+ *  createdAt: string;
+ *  updatedAt: string;
+ *  publishedAt: string;
+ *  revisedAt: string;
+ *  text: string; // This is Content type.
+ * } 
+ */
+client.getListDetail<Content>({ //other })
+
+/**
+ * type ResponseType = {
+ *  createdAt: string;
+ *  updatedAt: string;
+ *  publishedAt: string;
+ *  revisedAt: string;
+ *  text: string; // This is Content type.
+ * } 
+ */
+client.getObject<Content>({ //other })
 ```
 
 # LICENSE
