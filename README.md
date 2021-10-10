@@ -109,6 +109,7 @@ client
 If you are using TypeScript, use `getList`, `getListDetail`, `getObject`. This internally contains a common type of content.
 
 ```typescript
+// Type definition
 type Content = {
   text: string,
 }
