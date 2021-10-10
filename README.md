@@ -106,7 +106,7 @@ client
 
 ### TypeScript 
 
-If you are using TypeScript, specify `getList`, `getListDetail`, `getObject`.
+If you are using TypeScript, use `getList`, `getListDetail`, `getObject`. This internally contains a common type of content.
 
 ```typescript
 type Content = {
