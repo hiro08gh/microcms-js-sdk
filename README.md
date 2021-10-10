@@ -75,7 +75,7 @@ client
   .catch((err) => console.log(err));
 ```
 
-And, Api corresponding to each content are also available. example.
+And, api corresponding to each content are also available. example.
 
 ```javascript
 // Get list API data
@@ -117,7 +117,7 @@ type Content = {
 /**
  * // getList response type
  * {
- *  contents: Content; // This is Content type
+ *  contents: Content[]; // This is Content type
  *  totalCount: number;
  *  limit?: number;
  *  offset: number;
