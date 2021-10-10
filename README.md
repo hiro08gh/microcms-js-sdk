@@ -104,7 +104,9 @@ client
   .catch((err) => console.log(err));
 ```
 
-If you are using TypeScript, specify `getList`, `getListDetail`, `getObject`.  example.
+### TypeScript 
+
+If you are using TypeScript, specify `getList`, `getListDetail`, `getObject`.
 
 ```typescript
 type Content = {
@@ -112,7 +114,8 @@ type Content = {
 }
 
 /**
- * type ResponseType = {
+ * // getList response type
+ * {
  *  contents: Content; // This is Content type
  *  totalCount: number;
  *  limit?: number;
@@ -122,7 +125,8 @@ type Content = {
 client.getList<Content>({ //other })
 
 /**
- * type ResponseType = {
+ * // getListDetail response type
+ * {
  *  id: string;
  *  createdAt: string;
  *  updatedAt: string;
@@ -134,7 +138,8 @@ client.getList<Content>({ //other })
 client.getListDetail<Content>({ //other })
 
 /**
- * type ResponseType = {
+ * // getObject response type
+ * {
  *  createdAt: string;
  *  updatedAt: string;
  *  publishedAt: string;
